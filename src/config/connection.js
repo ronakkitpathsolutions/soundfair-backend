@@ -10,8 +10,12 @@ const sequelize = new Sequelize(
     host: process.env.DB_HOST,
     dialect: 'mysql',
     dialectOptions: {
-      connectTimeout: 60000 // Increase to 60 seconds
-    },
+      connectTimeout: 60000, // Increase to 60 seconds
+      ssl: {
+        require: true,
+        rejectUnauthorized: false // Change depending on your security needs
+      }
+  },
     dialectModule: require('mysql2'),
     port: process.env.DB_PORT,
     pool: {
