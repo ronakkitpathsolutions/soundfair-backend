@@ -14,8 +14,5 @@
   ],
   "env": {
     "NODE_ENV": "production"
-  },
-  "build": {
-    "command": "npm install && npm run build"
   }
 }
