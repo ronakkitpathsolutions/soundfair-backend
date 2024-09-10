@@ -11,6 +11,13 @@ const sequelize = new Sequelize(
     dialect: 'mysql',
     dialectModule: require('mysql2'),
     port: process.env.DB_PORT,
+    pool: {
+      max: 5,
+      min: 0,
+      acquire: 30000, // Time in ms Sequelize will try to get connection before throwing error
+      idle: 10000 // Time in ms to release the connection if idle
+    }
+
   }
 );
 
